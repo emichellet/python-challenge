@@ -1,4 +1,4 @@
-    PyPoll:
+PyPoll:
 
         Assignment Instructions:
         Create a Python script that analyzes the votes of a small, rural town.

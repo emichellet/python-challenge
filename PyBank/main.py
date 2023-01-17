@@ -1,4 +1,4 @@
-    PyBank:
+PyBank:
 
 Assignment Instructions:
     Create a Python script that analyzes the financial records of your company.
@@ -19,7 +19,7 @@ import csv
 
 
 #   Set and open file with the csv library
-csvpath = os.path.join('\Users\emich\Desktop\penn data science bootcamp\Mod3_Assignment\python-challenge\PyBank\Resources', 'budget_data.csv')
+csvpath = os.path.join("Resources", "budget_data.csv")
 
 #   Define your variables
 totnum_months = 0
