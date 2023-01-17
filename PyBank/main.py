@@ -1,16 +1,16 @@
-PyBank:
+#   PyBank:
 
-Assignment Instructions:
-    Create a Python script that analyzes the financial records of your company.
+#   Assignment Instructions:
+    #   Create a Python script that analyzes the financial records of your company.
 
-    Analyze the records to calculate the following values:
-            - Total number of months included in the dataset
-            - Net total amount of "Profit/Losses" over the entire period
-            - Changes in "Profit/Losses" over the entire period, and then the average of those changes
-            - Greatest increase in profits (the date and amount) over the entire period
-            - Greatest decrease in profits (the date and amount) over the entire period
+    #   Analyze the records to calculate the following values:
+    #        - Total number of months included in the dataset
+    #        - Net total amount of "Profit/Losses" over the entire period
+    #        - Changes in "Profit/Losses" over the entire period, and then the average of those changes
+    #        - Greatest increase in profits (the date and amount) over the entire period
+    #        - Greatest decrease in profits (the date and amount) over the entire period
 
-//////
+#       //////
 
 
 #   Import the os and csv modules
@@ -24,7 +24,7 @@ csvpath = os.path.join("Resources", "budget_data.csv")
 #   Define your variables
 totnum_months = 0
 net_tot = 0
-greatest_inc = {"month": "". "value": 0}
+greatest_inc = {"month": "", "value": 0}
 greatest_dec = {"month": "", "value": 0}
 monthly_change = 0
 prev_value = 0
