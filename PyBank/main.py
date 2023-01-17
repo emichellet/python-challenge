@@ -17,16 +17,21 @@
 import os
 import csv
 
+#   Define the function(export_filename):
+#       #   Code here
+#           with open(f"analysis/{export_filename}.txt", "w") as txt_file:
+#               txt_file.write(output)
 
-#   Set and open file with the csv library
-csvpath = os.path.join("Resources", "budget_data.csv")
+
+#   Set and open the path with the csv library
+csvpath = os.path.join('\Users\emich\Desktop\penn data science bootcamp\Mod3_Assignment\python-challenge\PyBank\Resources', 'budget_data.csv')
 
 #   Define your variables
 totnum_months = 0
 net_tot = 0
 greatest_inc = {"month": "", "value": 0}
 greatest_dec = {"month": "", "value": 0}
-monthly_change = 0
+monthly_change = []
 prev_value = 0
 profit_change = 0
 
@@ -76,5 +81,5 @@ with open(csvpath) as csvfile:
         print(output)
 
         #   Print out the outputs into the txt file within the analysis folder of the PyBank folder
-        with open("PyBank\Analysis\output.txt", "w") as txt_file:
+        with open("C:\Users\emich\Desktop\penn data science bootcamp\Mod3_Assignment\python-challenge\PyBank\Resources", "w") as txt_file:
             txt_file.write.output
