@@ -1,14 +1,14 @@
     PyBank:
 
-#   Assignment Instructions:
-#    Create a Python script that analyzes the financial records of your company.
+Assignment Instructions:
+    Create a Python script that analyzes the financial records of your company.
 
-#    Analyze the records to calculate the following values:
-#        - Total number of months included in the dataset
-#        - Net total amount of "Profit/Losses" over the entire period
-#        - Changes in "Profit/Losses" over the entire period, and then the average of those changes
-#        - Greatest increase in profits (the date and amount) over the entire period
-#        - Greatest decrease in profits (the date and amount) over the entire period
+    Analyze the records to calculate the following values:
+            - Total number of months included in the dataset
+            - Net total amount of "Profit/Losses" over the entire period
+            - Changes in "Profit/Losses" over the entire period, and then the average of those changes
+            - Greatest increase in profits (the date and amount) over the entire period
+            - Greatest decrease in profits (the date and amount) over the entire period
 
 //////
 
@@ -76,5 +76,6 @@ with open(csvpath) as csvfile:
         #   Print the outputs to the terminal
         print(output)
 
-        with open("Analysis/output.txt", "w") as txt_file:
+        #   Print out the outputs into the txt file within the analysis folder of the PyBank folder
+        with open("PyBank\Analysis\output.txt", "w") as txt_file:
             txt_file.write.output

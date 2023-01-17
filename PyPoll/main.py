@@ -68,5 +68,5 @@ winner_name = []
     print(output)
 
     #   Print out all the outputs in the txt file within the analysis folder
-    with open("analysis/output.txt", "w") as txt_file"
+    with open("PyPoll/Analysis/output.txt", "w") as txt_file"
         txt_file.write(output)
