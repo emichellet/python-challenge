@@ -19,7 +19,7 @@ import operator
 
 
 #   Set a path for the file 
-csvpath = os.path.join("Resouces", "pypoll_election_data.csv")
+csvpath = os.path.join("Resources", "pypoll_election_data.csv")
 tot_votes = 0
 candidate_names = []
 candidate_names_and_votes_dict = {}

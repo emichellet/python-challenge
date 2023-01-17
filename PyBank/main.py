@@ -19,7 +19,7 @@ import csv
 
 
 #   Set and open file with the csv library
-csvpath = os.path.join('C:\Users\emich\Desktop\penn data science bootcamp\Mod3_Assignment\python-challenge\PyBank\Resources', 'budget_data.csv')
+csvpath = os.path.join('\Users\emich\Desktop\penn data science bootcamp\Mod3_Assignment\python-challenge\PyBank\Resources', 'budget_data.csv')
 
 #   Define your variables
 totnum_months = 0
@@ -70,8 +70,7 @@ with open(csvpath) as csvfile:
             f"Total: ${net_tot}\n"
             f"Average Change: ${round(average_change, 2)}\n"
             f"Greatest Increase in Profits: {greatest_inc['month']} (${greatest_inc['value']})\n"
-            f"Greatest Decrease in Profits: {greatest_dec['month']} (${greatest_dec['value']})\n"
-        )
+            f"Greatest Decrease in Profits: {greatest_dec['month']} (${greatest_dec['value']})\n")
 
         #   Print the outputs to the terminal
         print(output)
