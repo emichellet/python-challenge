@@ -24,7 +24,7 @@ import csv
 
 
 #   Set and open the path with the csv library
-csvpath = os.path.join('\Users\emich\Desktop\penn data science bootcamp\Mod3_Assignment\python-challenge\PyBank\Resources', 'budget_data.csv')
+csvpath = os.path.join('Resources', 'budget_data.csv')
 
 #   Define your variables
 totnum_months = 0
@@ -39,6 +39,7 @@ profit_change = 0
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     header = next(csvreader)
+
 
     for row in csvreader:
         #profit_loss = int(row[1])
@@ -81,5 +82,6 @@ with open(csvpath) as csvfile:
         print(output)
 
         #   Print out the outputs into the txt file within the analysis folder of the PyBank folder
-        with open("C:\Users\emich\Desktop\penn data science bootcamp\Mod3_Assignment\python-challenge\PyBank\Resources", "w") as txt_file:
-            txt_file.write.output
+        output_file = os.path.join("Analysis", "output.txt")
+        with open(output_file, "w") as txt_file:
+            txt_file.write(output)
