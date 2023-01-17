@@ -76,5 +76,5 @@ with open(csvpath) as csvfile:
         #   Print the outputs to the terminal
         print(output)
 
-        with open("analysis/output.txt", "w") as txt_file:
+        with open("Analysis/output.txt", "w") as txt_file:
             txt_file.write.output
