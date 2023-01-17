@@ -1,6 +1,6 @@
     PyBank:
 
-#Assignment Instructions:
+#   Assignment Instructions:
 #    Create a Python script that analyzes the financial records of your company.
 
 #    Analyze the records to calculate the following values:
