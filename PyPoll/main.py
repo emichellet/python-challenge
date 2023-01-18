@@ -19,7 +19,7 @@ import operator
 
 
 #   Set a path for the csv file 
-csvpath = os.path.join("Resources", "election_data.csv")
+csvpath = os.path.join('Resources', 'election_data.csv')
 
 #   Define your variables
 tot_votes = 0
@@ -28,14 +28,13 @@ candidate_names_and_votes_dict = {}
 summary_of_candidates = ""
 winner_name = []
 
-#   Read the csv file an account for the header
+#   Open and read the csv file and account for header
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     header = next(csvreader)
 
-
     for candidate_data in csvreader:
-        
+    
         #   Find the total number of votes cast
         #       Add the total of all rows (disregard the header row)
             tot_votes += 1
