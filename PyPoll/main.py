@@ -13,65 +13,70 @@
 #               /////
 
 #   Import all the required modules
-import os
 import csv
-import operator
+import os
 
+#   Assign location of csv which will be accessed
+csvpath = os.path.join("Resources",  "election_data.csv")
 
-#   Set a path for the csv file 
-csvpath = os.path.join('Resources', 'election_data.csv')
-
-#   Define your variables
-tot_votes = 0
-candidate_names = []
-candidate_names_and_votes_dict = {}
-summary_of_candidates = ""
-winner_name = []
-
-#   Open and read the csv file and account for header
+#   Open the data for election results and read the csv file
 with open(csvpath) as csvfile:
-    csvreader = csv.reader(csvfile, delimiter=",")
-    header = next(csvreader)
+    data_set = csv.reader(csvfile, delimiter=",")
 
-    for candidate_data in csvreader:
-    
-        #   Find the total number of votes cast
-        #       Add the total of all rows (disregard the header row)
-            tot_votes += 1
+#   Initialize a total vote counter (set it to -1 to disregard the header row)
+tot_votes = -1
 
-        #   List out all the of the unique candidates
-        #   Start a dictionary with said candidates (note: set values to zero)
-    if candidate_data[2] not in candidate_names:
-            candidate_names.append(candidate_data[2])
-            candidate_names_and_votes_dict[candidate_data[2]] = 0
+#   Initialize counters for each candidate
+Khan_count = Correy_count = Li_count = Otooley_count = 0
 
-        #   Add the total votes to the dictionary keys
-            candidate_names_and_votes_dict[candidate_data[2]] += 1
+#   Initialize percentages for each candidaate's vote count
+Khan_percent = Correy_percent = Li_percent = Otooley_percent = 0
 
-    #   To find percent values, creaate a loop and then
-    #   combine all the variables from the dictionary into the string to present in the output
-    for key, value in candidate_names_and_votes_dict.items():
-            vote_percentage = ((value/tot_votes) *100)
-            summary_of_candidates += f"{key}: {vote_percentage:.3f}% ({value})\n"
+#   Loop through all the rows of the data set
+for row in data_set:
 
-    #   Find the winner of the popular vote
-    winner_name = max(candidate_names_and_votes_dict.items(), key = operator.itemgetter(1))[0]
-    
-    #   Print the output into a txt file within the analysis folder
-    output = (
-            f"Election Results\n"
-            f"-----------------\n"
-            f"Total votes: {tot_votes}\n"
-            f"-----------------\n"
-            f"{summary_of_candidates}"
-            f"------------------\n"
-            f"the Winner (of the election): {winner_name}\n"
-            f"------------------\n")
+    #   Set up a counter that will account for the total number of rows
+    #   to use for calculating the percentage of votes
+    tot_votes += 1
 
-    #   Print out the results to the terminal
-    print(output)
+#   Set up the conddtionals to identify contents of each 3rd column (county)
+    if row[2] == "Khan":
+        Khan_count += 1
+    elif row[2] == "Correy":
+        Correy_count += 1
+    elif row[2] == "Li":
+        Li_count += 1
+    elif row[2] == "0'Toooley":
+        Otooley_count += 1
 
-    #   Print out all the outputs in the txt file within the analysis folder
-    output_file = os.path.join("Analysis", "output.txt")
-    with open(output_file, "w") as txt_file:
-            txt_file.write(output)
+    #   Loop through the dictionary to get the candidate name as a key and votes for the value
+        #   Then create a dictionary that assigns each key to the respective candidate
+        #   Include the amount of votes that they collected
+        Results = {"Khan":Khan_count, "Correy":Correy_count, "Li":Li_count, "O'Tooley":Otooley_count}
+
+#   Calculate the percentages of votes per candidate
+    Khan_percent = (Khan_count / tot_votes) * 100
+    Correy_percent = (Correy_count / tot_votes) * 100
+    Li_percent = (Li_count / tot_votes) * 100
+    Otooley_percent = (Otooley_count / tot_votes) * 100
+
+#   Find the maximum value from the values within the ditionary and return its key, then store it as the 'Winner'
+    Winner = max(Results, key=Results.get)
+    toprint = f"""Election Results
+---------------------------------
+Total Votes: {tot_votes}
+---------------------------------
+Khan: {Khan_percent}% ({Khan_count})
+Correy: {Correy_percent}% ({Correy_count})
+Li: {Li_percent}% ({Li_count})
+O'Tooley: {Otooley_percent}% ({Otooley_count})
+---------------------------------
+Winner: {Winner}
+---------------------------------"""
+
+#   Print it to the terminal
+print(toprint)
+
+#   Create a text file, print all over to the text file and close it
+file = open("output.txt", "w")
+file.write(toprint)

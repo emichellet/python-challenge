@@ -1,8 +1,7 @@
 Election Results
------------------
-Total votes: 369711
------------------
-Summary for each candidate: Raymon Anthony Doane: 0.000% (1)
-------------------
-the Winner (of the election): []
-------------------
+--------------------
+Total votes: 369,711
+----------------------
+County Votes:
+Raymon Anthony Doane: 0.0% (1)
+Winner: Raymon Anthony Doane
